@@ -41,12 +41,12 @@ body>.page>section {
   color: white;
 }
 
-#app2 .tab-content {
-  display: block;
+#app2 .tab-content li {
+  display: none;
 }
 
 #app2 .tab-content li.active {
-  display: none;
+  display: block;
 }
 #app3{
 
@@ -86,4 +86,4 @@ body>.page>section {
   animation: change 1s linear infinite alternate;
 }
 
-/*# sourceMappingURL=main.2f88f0ee.css.map */
+/*# sourceMappingURL=main.f09742ca.css.map */

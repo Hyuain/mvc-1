@@ -14,10 +14,10 @@
   color: white;
 }
 
-#app2 .tab-content {
-  display: block;
+#app2 .tab-content li {
+  display: none;
 }
 
 #app2 .tab-content li.active {
-  display: none;
+  display: block;
 }

@@ -10976,13 +10976,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var $tabBar = (0, _jquery.default)('#app2 .tab-bar');
 var $tabContent = (0, _jquery.default)('#app2 .tab-content');
+var localKey = 'app2.index';
+var index = localStorage.getItem(localKey) || 0;
 $tabBar.on('click', 'li', function (e) {
   var $li = (0, _jquery.default)(e.currentTarget);
   $li.addClass('selected').siblings().removeClass('selected');
   var index = $li.index();
+  localStorage.setItem(localKey, index);
   $tabContent.children().eq(index).addClass('active').siblings().removeClass('active');
 });
-$tabBar.children().eq(0).trigger('click');
+$tabBar.children().eq(index).trigger('click');
 },{"jquery":"juYr","./app2.css":"AQoi"}],"y8lT":[function(require,module,exports) {
 "use strict";
 
@@ -10993,8 +10996,18 @@ require("./app3.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var $square = (0, _jquery.default)('#app3 #square');
+var localKey = 'app3.active';
+var active = localStorage.getItem(localKey) === 'yes' ? true : false; // 如果 active 是 true，就最开始加上class='active'，如果是 false，就不加
+
+$square.toggleClass('active', active);
 $square.on('click', function () {
-  $square.toggleClass('active');
+  if ($square.hasClass('active')) {
+    $square.removeClass('active');
+    localStorage.setItem('app3.active', 'no');
+  } else {
+    $square.addClass('active');
+    localStorage.setItem('app3.active', 'yes');
+  }
 });
 },{"jquery":"juYr","./app3.css":"AQoi"}],"eWpN":[function(require,module,exports) {
 "use strict";
@@ -11026,4 +11039,4 @@ require("./app3.js");
 
 require("./app4.js");
 },{"./reset.css":"AQoi","./global.css":"AQoi","./app1.js":"US5u","./app2.js":"vZ5o","./app3.js":"y8lT","./app4.js":"eWpN"}]},{},["epB2"], null)
-//# sourceMappingURL=main.0fe45896.js.map
+//# sourceMappingURL=main.da44708a.js.map
