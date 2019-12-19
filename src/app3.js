@@ -1,6 +1,13 @@
 import $ from 'jquery'
 import './app3.css' 
 
+const html =`
+<section id="app3">
+<div id="square"></div>
+</section>
+`
+const $element = $(html).appendTo($('body>.page'))
+
 const $square = $('#app3 #square')
 const localKey = 'app3.active'
 const active = localStorage.getItem(localKey) === 'yes' ? true : false
