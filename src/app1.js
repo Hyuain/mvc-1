@@ -33,6 +33,7 @@ const view = {
       </div>
     </div>
 `,
+  eventBus: eventBus,
   init (container) {
     view.el = $(container)
     view.render(m.data.num) // view = render(data)
